@@ -48,7 +48,6 @@ test:
     - surya_detect --help
     - surya_ocr --help
     - surya_layout --help
-    - surya_gui --help
     - surya_order --help
   requires:
     - pip
