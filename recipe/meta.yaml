@@ -1,5 +1,5 @@
 {% set name = "surya-ocr" %}
-{% set version = "0.4.14" %}
+{% set version = "0.4.15" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/surya_ocr-{{ version }}.tar.gz
-  sha256: d687fef8f48b5dad2289f8f805abaa6834dcb54de73d9c9ad214bd30f01ec42e
+  sha256: 17a37ce1ae9c67afa774efac55df5e07a391b84c3aa5f17133acd7b398fc4dbf
 
 build:
   entry_points:
@@ -38,6 +38,7 @@ requirements:
     - tabulate >=0.9.0,<0.10.0
     - filetype >=1.2.0,<2.0.0
     - ftfy >=6.1.3,<7.0.0
+    - streamlit
 
 test:
   imports:
@@ -47,7 +48,6 @@ test:
     - surya_detect --help
     - surya_ocr --help
     - surya_layout --help
-    - surya_gui --help
     - surya_order --help
   requires:
     - pip
