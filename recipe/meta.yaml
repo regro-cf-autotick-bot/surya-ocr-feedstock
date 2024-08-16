@@ -1,5 +1,5 @@
 {% set name = "surya-ocr" %}
-{% set version = "0.4.15" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/surya_ocr-{{ version }}.tar.gz
-  sha256: 17a37ce1ae9c67afa774efac55df5e07a391b84c3aa5f17133acd7b398fc4dbf
+  sha256: a80740c2b000d9630cf3d5525043c95096efaeb6b0892254ff32339a171e789a
 
 build:
   entry_points:
