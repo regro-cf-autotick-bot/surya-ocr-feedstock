@@ -22,11 +22,11 @@ build:
 
 requirements:
   host:
-    - python >=3.9,<3.13,!=3.9.7
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.9,<3.13,!=3.9.7
+    - python >={{ python_min }}
     - transformers >=4.41.0,<5.0.0
     - pytorch >=2.3.0,<3.0.0
     - pydantic >=2.5.3,<3.0.0
@@ -39,7 +39,7 @@ requirements:
     - filetype >=1.2.0,<2.0.0
     - ftfy >=6.1.3,<7.0.0
     - streamlit
-    - pdftext <0.4.0,>=0.3.12
+    - pdftext <0.5.0,>=0.4.0
 
 test:
   imports:
@@ -52,6 +52,7 @@ test:
     - surya_order --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/VikParuchuri/surya
