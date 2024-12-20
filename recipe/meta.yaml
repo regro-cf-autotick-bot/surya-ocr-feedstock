@@ -1,13 +1,13 @@
 {% set name = "surya-ocr" %}
-{% set version = "0.6.13" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/surya_ocr-{{ version }}.tar.gz
-  sha256: 9024d3d2fde245bd5048070c587c7148dffa02d7c6a9bb76432a9eea9a4a3174
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/surya_ocr-{{ version }}.tar.gz
+  sha256: c20caa1db92b3a31944121cc41d08afef80bcbeff0060ff192b33e3d95f98c02
 
 build:
   entry_points:
