@@ -1,13 +1,13 @@
 {% set name = "surya-ocr" %}
-{% set version = "0.6.13" %}
+{% set version = "0.8.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/surya_ocr-{{ version }}.tar.gz
-  sha256: 9024d3d2fde245bd5048070c587c7148dffa02d7c6a9bb76432a9eea9a4a3174
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/surya_ocr-{{ version }}.tar.gz
+  sha256: eae8ce47e1873d42a0e35d58205dc7378dc813021b68881854e446d3e4a3a95e
 
 build:
   entry_points:
@@ -28,7 +28,7 @@ requirements:
   run:
     - python >=3.9,<3.13,!=3.9.7
     - transformers >=4.41.0,<5.0.0
-    - pytorch >=2.3.0,<3.0.0
+    - pytorch >=2.4.1,<3.0.0
     - pydantic >=2.5.3,<3.0.0
     - pydantic-settings >=2.1.0,<3.0.0
     - python-dotenv >=1.0.0,<2.0.0
@@ -39,7 +39,7 @@ requirements:
     - filetype >=1.2.0,<2.0.0
     - ftfy >=6.1.3,<7.0.0
     - streamlit
-    - pdftext <0.4.0,>=0.3.12
+    - pdftext >=0.4.0,<0.5.0
 
 test:
   imports:
