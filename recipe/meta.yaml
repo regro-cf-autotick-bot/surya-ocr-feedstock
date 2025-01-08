@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/surya_ocr-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/surya_ocr-{{ version }}.tar.gz
   sha256: 9024d3d2fde245bd5048070c587c7148dffa02d7c6a9bb76432a9eea9a4a3174
 
 build:
@@ -18,15 +18,15 @@ build:
     - surya_order = reading_order:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9,<3.13,!=3.9.7
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.9,<3.13,!=3.9.7
+    - python >={{ python_min }},<3.13
     - transformers >=4.41.0,<5.0.0
     - pytorch >=2.3.0,<3.0.0
     - pydantic >=2.5.3,<3.0.0
@@ -52,6 +52,7 @@ test:
     - surya_order --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/VikParuchuri/surya
